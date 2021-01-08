@@ -1,25 +1,23 @@
-import {useState} from 'react';
-import React from "react";
-import "./styles.css";
+import React from 'react';
+import { useState } from "react";
+import "./app.css";
+//import Main from "./components/main/Main";
+import Navbar from "./components/navbar/navbar";
+//import Sidebar from "./components/sidebar/Sidebar";
 
 const App = () => {
-
-  const[sidebarOpen , setSidebarOpen] = useState(false);
-
-      const openSidebar = () =>{
-        setSidebarOpen(true);
-      }
-
-      const closeSidebar = () =>{
-        setSidebarOpen(true);
-      }
-
-      return(
-        <div className = "container">
-          <h1>React</h1>
-          </div>
-      );
-
-}
+  const [sidebarOpen, setsidebarOpen] = useState(false);
+  const openSidebar = () => {
+    setsidebarOpen(true);
+  };
+  const closeSidebar = () => {
+    setsidebarOpen(false);
+  };
+  return (
+    <div className="container">
+      <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
+    </div>
+  );
+};
 
 export default App;
